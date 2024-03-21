@@ -1,0 +1,7 @@
+spec:
+  destination:
+    server: https://223.130.141.96:6443
+  source:
+    repoURL: "https://charts.jetstack.io"
+    chart: "cert-manager"
+    targetRevision: "1.13.3"
