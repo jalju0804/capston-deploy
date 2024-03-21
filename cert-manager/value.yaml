@@ -1,7 +1,0 @@
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-  source:
-    repoURL: "https://charts.jetstack.io"
-    chart: "cert-manager"
-    targetRevision: "1.13.3"
