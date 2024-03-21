@@ -17,7 +17,7 @@ spec:
           
   destination:
     namespace: cert-manager
-    server: "https://223.130.141.96:6443"
+    server: default
   syncPolicy:
     automated:
       prune: true

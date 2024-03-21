@@ -1,6 +1,6 @@
 spec:
   destination:
-    server: https://223.130.141.96:6443
+    server: default
   source:
     repoURL: "https://charts.jetstack.io"
     chart: "cert-manager"
