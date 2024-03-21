@@ -1,6 +1,6 @@
 spec:
   destination:
-    server: in-cluster
+    server: https://kubernetes.default.svc
   source:
     repoURL: "https://charts.jetstack.io"
     chart: "cert-manager"
