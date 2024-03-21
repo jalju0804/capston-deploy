@@ -17,7 +17,7 @@ spec:
           
   destination:
     namespace: cert-manager
-    server: default
+    server: in-cluster
   syncPolicy:
     automated:
       prune: true

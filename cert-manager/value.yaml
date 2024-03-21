@@ -1,6 +1,6 @@
 spec:
   destination:
-    server: default
+    server: in-cluster
   source:
     repoURL: "https://charts.jetstack.io"
     chart: "cert-manager"
