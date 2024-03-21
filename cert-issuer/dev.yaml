@@ -9,7 +9,7 @@ spec:
   issuerRef:
     kind: ClusterIssuer
     name: letsencrypt-prod
-  secretName: wildcard-undercloud-prod-cert
+  secretName: wildcard-ajoufesta-cert
 
 ---
 
@@ -24,4 +24,4 @@ spec:
   issuerRef:
     kind: ClusterIssuer
     name: letsencrypt-prod
-  secretName: undercloud-prod-cert
+  secretName: ajoufesta-cert
