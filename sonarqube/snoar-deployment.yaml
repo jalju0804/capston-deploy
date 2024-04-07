@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sonarqube
+  name: sonarqube
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sonarqube
+  template:
+    metadata:
+      labels:
+        app: sonarqube
+    spec:
+      containers:
+        - name: sonarqube
+          image: sonarqube:latest
+          volumeMounts:
+            - mountPath: "/opt/sonarqube/data/"
+              name: sonar-data
+            - mountPath: "/opt/sonarqube/extensions/"
+              name: sonar-extensions
+          env:
+            - name: "SONARQUBE_JDBC_USERNAME"
+              value: "postgres"
+            - name: "SONARUQBE_JDBC_URL"
+              value: "jdbc:sqlserver://sonarqube.crm28kqgatt5.ap-northeast-2.rds.amazonaws.com;databaseName=sonarqube;encrypt=false"
+            - name: "SONARQUBE_JDBC_PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  name: postgres
+                  key: password
+          ports:
+            - containerPort: 9000
+              protocol: TCP
+      volumes:
+        - name: sonar-data
+          persistentVolumeClaim:
+            claimName: sonar-data
+        - name: sonar-extensions
+          persistentVolumeClaim:
+            claimName: sonar-extensions
